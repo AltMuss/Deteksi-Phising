@@ -16,10 +16,12 @@ from urllib.parse import urlparse
 
 # Install requests & beautifulsoup4 jika belum ada
 try:
+    import subprocess, sys
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "requests", "beautifulsoup4", "-q"])
     import requests
     from bs4 import BeautifulSoup
     SCRAPING_AVAILABLE = True
-except ImportError:
+except:
     SCRAPING_AVAILABLE = False
 
 # ─── Page Config ──────────────────────────────────────────────────────────────
